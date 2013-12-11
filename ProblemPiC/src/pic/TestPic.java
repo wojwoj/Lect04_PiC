@@ -9,9 +9,13 @@ public class TestPic {
 		
 		Papier wyborcza = new Papier(10);
 		
+		PapierUser.numberOfWriters =10;
+		PapierUser.myPapier =wyborcza;
+		
+		
 		Pisarz p1 = new Pisarz();
-		p1.myPapier = wyborcza;
-		p1.numberOfWriters =10;
+		//p1.myPapier = wyborcza;
+		//p1.numberOfWriters =10;
 		
 		Pisarz p2 = new Pisarz();
 		Pisarz p3 = new Pisarz();
@@ -27,6 +31,9 @@ public class TestPic {
 		new Thread(c1).start();
 		new Thread(c2).start();
 		new Thread(c3).start();
+		
+		GuiHandler gh = new GuiHandler();
+		gh.createForm();
 		
 	
 	}

@@ -14,7 +14,7 @@ public class Czytelnik extends PapierUser implements Runnable {
 				myPapier.seam.release();
 				System.out.println("-> " + this.toString()
 						+ " Skonczylem czytac ");
-				Thread.sleep((int) ((Math.random() + 1) * 1000));
+				Thread.sleep((int) ((Math.random()) * 4000));
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

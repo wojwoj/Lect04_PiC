@@ -17,7 +17,7 @@ public class Pisarz extends PapierUser implements Runnable {
 				myPapier.seam.release(numberOfWriters);
 				System.out.println("-> " + this.toString()
 						+ " Skonczylem pisac");
-				Thread.sleep((int) ((Math.random() + 1) * 1000));
+				Thread.sleep((int) ((Math.random()) * 4000));
 
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
