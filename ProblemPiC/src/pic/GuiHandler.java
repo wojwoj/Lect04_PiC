@@ -17,48 +17,37 @@ import javax.swing.JPanel;
 
 public class GuiHandler {
 
-	JPanel[][] panelHolder = new JPanel[3][6];
+	public JPanel[][] panelHolder = new JPanel[3][7];
+	JFrame anotherFrame;
 	public void createForm() {
-		JFrame anotherFrame = new JFrame();
+		
+		anotherFrame = new JFrame();
 		anotherFrame.getContentPane().setPreferredSize(new Dimension(800,600));
-
-		anotherFrame.setLayout(new GridLayout(3,6));
+		anotherFrame.setLayout(new GridLayout(3,7));
 
 		for(int m = 0; m < 3; m++) {
-		   for(int n = 0; n < 6; n++) {
+		   for(int n = 0; n < 7; n++) {
 		      panelHolder[m][n] = new JPanel();
 		      anotherFrame.add(panelHolder[m][n]);
 		   }
 		}
 		
-		JButton quitButton = new JButton("Quit");
-		quitButton.setBounds(50, 60, 80, 30);
-
-		quitButton.addActionListener(new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent event) {
-				System.exit(0);
-			}
-		});
 		BufferedImage myPicture;
 		BufferedImage myPicture1;
 		try {
-			myPicture = ImageIO.read(this.getClass().getResource("czyt.jpg"));
-			myPicture1 = ImageIO.read(this.getClass().getResource("pis.jpg"));
-			JLabel picLabel = new JLabel(new ImageIcon(myPicture));
-			JLabel picLabel1 = new JLabel(new ImageIcon(myPicture1));
-			panelHolder[0][0].add(picLabel);
-			panelHolder[2][5].add(picLabel1);
-			
+			myPicture = ImageIO.read(this.getClass().getResource("papier.jpg"));
+			JLabel picLabel= new JLabel(new ImageIcon(myPicture));
+			this.panelHolder[2][0].add(picLabel);
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		
-		//anotherFrame.add(quitButton);
 		anotherFrame.pack();
 		anotherFrame.setVisible(true);
+		anotherFrame.resize(new Dimension(800,600));
+		anotherFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }
