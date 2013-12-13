@@ -1,5 +1,6 @@
 package pic;
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -22,7 +23,9 @@ public class GuiHandler {
 	public void createForm() {
 		
 		anotherFrame = new JFrame();
-		anotherFrame.getContentPane().setPreferredSize(new Dimension(800,600));
+		anotherFrame.setTitle("iran nuclear program");
+		anotherFrame.setResizable(false);
+		//anotherFrame.getContentPane().setPreferredSize(new Dimension(800,600));
 		anotherFrame.setLayout(new GridLayout(3,7));
 
 		for(int m = 0; m < 3; m++) {
@@ -33,7 +36,6 @@ public class GuiHandler {
 		}
 		
 		BufferedImage myPicture;
-		BufferedImage myPicture1;
 		try {
 			myPicture = ImageIO.read(this.getClass().getResource("papier.jpg"));
 			JLabel picLabel= new JLabel(new ImageIcon(myPicture));
@@ -46,8 +48,7 @@ public class GuiHandler {
 		
 		anotherFrame.pack();
 		anotherFrame.setVisible(true);
-		anotherFrame.resize(new Dimension(800,600));
-		anotherFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-	}
+		anotherFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);	
+		}
 
 }

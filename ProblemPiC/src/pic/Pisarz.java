@@ -70,6 +70,9 @@ public class Pisarz extends PapierUser implements Runnable {
 		this.gh.panelHolder[0][column].add(picLabel);
 		this.gh.panelHolder[1][column].add(empty);
 		this.gh.panelHolder[2][column].add(empty);
+		this.gh.panelHolder[0][column].revalidate();
+		this.gh.panelHolder[1][column].revalidate();
+		this.gh.panelHolder[2][column].revalidate();
 		this.gh.panelHolder[0][column].repaint();
 		this.gh.panelHolder[1][column].repaint();
 		this.gh.panelHolder[2][column].repaint();
@@ -81,6 +84,9 @@ public class Pisarz extends PapierUser implements Runnable {
 		this.gh.panelHolder[0][column].add(empty);
 		this.gh.panelHolder[1][column].add(picLabel);
 		this.gh.panelHolder[2][column].add(empty);
+		this.gh.panelHolder[0][column].revalidate();
+		this.gh.panelHolder[1][column].revalidate();
+		this.gh.panelHolder[2][column].revalidate();
 		this.gh.panelHolder[0][column].repaint();
 		this.gh.panelHolder[1][column].repaint();
 		this.gh.panelHolder[2][column].repaint();
@@ -92,6 +98,9 @@ public class Pisarz extends PapierUser implements Runnable {
 		this.gh.panelHolder[0][column].add(empty);
 		this.gh.panelHolder[1][column].add(empty);
 		this.gh.panelHolder[2][column].add(picLabel);
+		this.gh.panelHolder[0][column].revalidate();
+		this.gh.panelHolder[1][column].revalidate();
+		this.gh.panelHolder[2][column].revalidate();
 		this.gh.panelHolder[0][column].repaint();
 		this.gh.panelHolder[1][column].repaint();
 		this.gh.panelHolder[2][column].repaint();
