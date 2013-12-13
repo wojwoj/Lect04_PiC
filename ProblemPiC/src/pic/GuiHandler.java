@@ -25,12 +25,12 @@ public class GuiHandler {
 		anotherFrame = new JFrame();
 		anotherFrame.setTitle("iran nuclear program");
 		anotherFrame.setResizable(false);
-		//anotherFrame.getContentPane().setPreferredSize(new Dimension(800,600));
 		anotherFrame.setLayout(new GridLayout(3,7));
 
 		for(int m = 0; m < 3; m++) {
 		   for(int n = 0; n < 7; n++) {
 		      panelHolder[m][n] = new JPanel();
+		      panelHolder[m][n].setBackground(Color.WHITE);
 		      anotherFrame.add(panelHolder[m][n]);
 		   }
 		}

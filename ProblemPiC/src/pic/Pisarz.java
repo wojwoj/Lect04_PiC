@@ -10,10 +10,6 @@ import javax.swing.JPanel;
 
 public class Pisarz extends PapierUser implements Runnable {
 
-	BufferedImage myPicture;
-	JLabel picLabel;
-	JLabel empty;
-
 	public Pisarz() {
 		super();
 		try {
@@ -25,9 +21,8 @@ public class Pisarz extends PapierUser implements Runnable {
 
 	}
 
-	public Pisarz(int row, int column) {
+	public Pisarz(int column) {
 		super();
-		this.row = row;
 		this.column = column;
 		try {
 			myPicture = ImageIO.read(this.getClass().getResource("pis.jpg"));
@@ -62,48 +57,6 @@ public class Pisarz extends PapierUser implements Runnable {
 						.println("Czekam bo nie ma papieru" + this.toString());
 			}
 		}
-
-	}
-
-
-	public void isSleeping() {		
-		this.gh.panelHolder[0][column].add(picLabel);
-		this.gh.panelHolder[1][column].add(empty);
-		this.gh.panelHolder[2][column].add(empty);
-		this.gh.panelHolder[0][column].revalidate();
-		this.gh.panelHolder[1][column].revalidate();
-		this.gh.panelHolder[2][column].revalidate();
-		this.gh.panelHolder[0][column].repaint();
-		this.gh.panelHolder[1][column].repaint();
-		this.gh.panelHolder[2][column].repaint();
-		//this.gh.anotherFrame.getContentPane().repaint();
-	}
-
-	@Override
-	public void isWaiting() {
-		this.gh.panelHolder[0][column].add(empty);
-		this.gh.panelHolder[1][column].add(picLabel);
-		this.gh.panelHolder[2][column].add(empty);
-		this.gh.panelHolder[0][column].revalidate();
-		this.gh.panelHolder[1][column].revalidate();
-		this.gh.panelHolder[2][column].revalidate();
-		this.gh.panelHolder[0][column].repaint();
-		this.gh.panelHolder[1][column].repaint();
-		this.gh.panelHolder[2][column].repaint();
-
-	}
-
-	@Override
-	public void isActive() {
-		this.gh.panelHolder[0][column].add(empty);
-		this.gh.panelHolder[1][column].add(empty);
-		this.gh.panelHolder[2][column].add(picLabel);
-		this.gh.panelHolder[0][column].revalidate();
-		this.gh.panelHolder[1][column].revalidate();
-		this.gh.panelHolder[2][column].revalidate();
-		this.gh.panelHolder[0][column].repaint();
-		this.gh.panelHolder[1][column].repaint();
-		this.gh.panelHolder[2][column].repaint();
 
 	}
 }
